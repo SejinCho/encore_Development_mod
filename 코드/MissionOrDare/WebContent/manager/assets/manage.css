@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap');
+:root{
+	--black: black;
+	--white: #fafafa;
+	--main-menu-btn-color: #888;
+	--modal-bg-bgcolor: rgba(0,0,0,0.6);
+
+	--sub-btn-primary-bgcolor: #222222f5;
+	--sub-btn-danger-bgcolor: #d12b2b;
+	--sub-btn-success-bgcolor: #627cdc;
+
+	--sub-table-pageing-color: #0c0c0c;
+
+}
+
+/***************************************
+
+        layout
+
+****************************************/
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--black);
+	min-width: 100%;
+	padding: 0;
+}
+nav{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background: none;
+	position: fixed;
+}
+nav label{
+	color: var(--white);
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 1.7rem;
+	margin: 5px 50px;
+}
+nav label:hover{
+	cursor: pointer;
+}
+nav ul{
+	list-style: none;
+	margin: 0 100px 0 0;
+	padding: 0;
+	display: flex;
+}
+nav .btn-menu{
+	display: none;
+}
+@media screen and (max-width: 960px){
+	nav ul {
+		display: none;
+	}
+	nav .btn-menu{
+		display: inline;
+		color: var(--main-menu-btn-color);
+		margin: 0 30px 0 0;
+	}
+	nav .btn-menu:hover{
+		color: var(--white);
+	}
+}
+nav ul li{
+	margin: 5px 10px;
+}
+nav a, a:hover, a:link, a:visited{
+	color: var(--white);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color : white;
+	font-weight: bold;
+}
+.change-nav label{
+	color: black;
+}
+.change-nav a, .change-nav a:link, .change-nav a:hover, .change-nav a:visited{
+	color: black;
+}
+
+article{
+	width: 100%;
+	min-height: 662px;
+	text-align: center;
+	background: var(--black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+article .under_text{
+	color: var(--black);
+	font-size: 40rem;
+	-webkit-text-stroke-width: 5px;
+	-webkit-text-stroke-color: var(--white);
+	font-family: 'Barlow', sans-serif;
+}
+
+.sub-page{
+	background: var(--white);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: end;
+}
+
+footer{
+	width: 100%;
+	color: var(--white);
+	text-align: center;
+	padding: 20px 0;
+	background: var(--black);
+}
+
+/***************************************
+
+    modal
+
+****************************************/
+.modal-bg{
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg-bgcolor);
+}
+.modal-bg .index-modal-content{
+	background-color: var(--white);
+	padding: 10px;
+	border: 1px solid #888;
+	width: 50%;
+	margin: 10% auto;
+}
+.loginModal ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+}
+.loginModal ul li{
+	margin: 10px auto;
+	font-size: 2rem;
+}
+.loginModal ul li i{
+	font-size: 10rem;
+}
+.modal-bg .modal-content {
+    background-color: var(--white);
+    padding: 10px;
+    border: 1px solid #888;
+    width: 70%;
+	margin: 5% auto;
+}
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/***********************************************
+
+    sub page public
+
+************************************************/
+.sub-page .btn-primary{
+	background: var(--sub-btn-primary-bgcolor);
+}
+.sub-page .btn-success{
+	background: var(--sub-btn-success-bgcolor);
+}
+.sub-page .btn-danger{
+	background: var(--sub-btn-danger-bgcolor);
+}
+.sub-page a, .sub-page a:hover, .sub-page a:link, .sub-page a:visited{
+	color: black;
+}
+
+.search-part{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+.search-part .btn-success{
+	margin-right: 100px;
+}
+@media screen and (max-width: 960px){
+	.search-part .btn-success{
+		margin-right: 50px;
+	}
+}
+.list-part{
+	width:100%;
+	padding: 20px;
+}
+.list-part div{
+    position: absolute;
+    right: 31px;
+    bottom: -282px;
+}
+
+.title-part{
+	background-image: url('../images/bg_3.jpg');
+	background-color: var(--black);
+	background-size: cover;
+	color: var(--white);
+	width: 100%;
+	height: 721px;
+}
+.title-part div{
+	margin: 600px 0 0 100px;
+}
+.title-part h1{
+	margin: 30px 0;
+	font-size: 7rem;
+}
+
+
+
+/***********************************************
+
+    LoginPage
+    
+************************************************/
+.loginFormPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10% auto;
+}
+.loginFormPage form{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1.7rem;
+	border: 1px solid #888;
+	border-radius: 10px;
+	padding: 5%;
+	box-shadow: 5px 10px #888;
+}
+.loginFormPage form .btn-line{
+	margin: 40px auto 0 auto;
+}
+.btn-line button{
+	width: 90px;
+	margin: auto 40px;
+}
+/***********************************************
+
+    Category_insert Modal
+    
+************************************************/
+.category-insert{
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	margin: 0;
+}
+.category-insert ul{
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	
+}
+.category-insert ul li{
+	margin: 10px;
+}
+.category-insert ul li i{
+	font-size: 4rem;
+	margin: 0 auto 10px auto;
+}
+.category-insert ul li .title{
+	font-size: 3rem;
+	margin: 0 auto 20px auto;
+}
+.category-insert ul li img{
+	width: 200px;
+	height: 200px;
+}
+.category-insert ul li button{
+	margin: 15px auto 0 auto;
+	width: 	30%;
+	font-size: 1.7rem;
+	text-align: center;
+} 
+
+
+
+
+
+/***************************************
+
+    mission_insert Modal
+
+****************************************/
+.mission-insert{
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	margin: 0;
+}
+.mission-insert ul{
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.mission-insert ul li{
+	margin: 10px;
+}
+.mission-insert ul li i{
+	font-size: 4rem;
+	margin: 0 auto 10px auto;
+}
+.mission-insert ul li .title{
+	font-size: 3rem;
+	margin: 0 auto 30px auto;
+}
+.mission-insert .category-line{
+	display: flex;
+	justify-content: center;
+}
+.mission-insert .category-line select{
+	width: 35%;
+	margin: auto 10px;
+}
+.mission-insert .left-align{
+	text-align: left;
+	padding-left: 10px;
+}
+.mission-insert label{
+	width:20%;
+}
+.mission-insert ul li select{
+	width: 50%;
+	display: inline;
+	margin-left: 10px;	
+}
+.mission-insert ul li input{
+	width: 50%;
+	display: inline;
+	margin-left: 10px;
+}
+
+.mission-insert ul li button{
+	margin: 25px auto 0 auto;
+	width: 	30%;
+	font-size: 1.7rem;
+	text-align: center;
+} 
+
+/***************************************
+
+    manamge_mission
+
+****************************************/
+.mission-table table{
+    text-align: center;
+    width: 100%;
+    height: 700px;
+}
+
+.mission-table tbody button{
+    border:none;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+
+/***********************************************
+
+    MissionInfoPage
+
+************************************************/
+.info-page{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--white);
+}
+.info-page table{
+	width: 100%;
+	height: 60%;
+	margin: 0;
+	padding: 0;
+}
+.info-page img{
+	width: 200px;
+	height: 200px;
+	margin-bottom: 20px;
+}
+.info-page table .btn-line{
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+}
+.info-page table .btn-line button{
+	width: 200px;
+	height: 50px;
+	margin: 10px 50px;
+}
+/***************************************
+
+    manamge_user_info
+
+****************************************/
+.list-part-user-info{
+	width:40%;
+	padding: 20px;
+}
+.list-part-user-info table{
+	align-items: center;
+	margin-top: 40px;
+}
+.list-part-user-info th{
+	text-align: center;
+}
+
+/***************************************
+
+    manamge_content_info
+
+****************************************/
+.swiper-container {
+    width: 100%;
+    height: 80%;
+}
+
+.swiper-slide {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.content-infodiv{
+	display:flex;
+	flex-wrap:wrap;
+	width:60%;
+	height:50%;
+	margin:0 auto;	
+	justify-content: center;
+	background-color: #f8f0ff;
+	border-radius: 5%;
+}
+.content-part{
+	height : 60%;
+    width: 100%;
+    padding: 0px;
+    font-size: 20px;
+    float: left;
+    margin-top: 10px;
+}
+.content-part .content-category {
+	font-size: 15px;
+}	
+.content-part .content-title{
+    margin: 5px;
+    font-size: 35px;
+}
+.content-part .content-title span{
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.content-part .img-circle{
+    width: 32px;
+    height: 32px;
+}
+.content-part .content-profile{
+    background-color: yellow;
+    border-radius: 20px;
+    border: 1px black solid;
+    width: 20%;
+    position: relative;
+	top: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.content-part .content-box{
+    text-align: center;
+}
+.content-part .content-box div{
+    margin: 10px auto;
+}
+.content-part .content-box .content-image{
+    width: 250px;
+    height: 250px;
+}
+.content-part .like-box{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content-part .like-box span{
+	margin-right: 20px;
+}
+.reply-part{
+    width: 60%;
+    height: 50%;
+    margin: 0;
+    padding: 10px;
+    float: right;
+    font-size: 20px;
+    overflow: scroll
+}
+.reply-part .reply-box{
+     padding: 20px;
+     background-color: #f7f7f7;
+}
+.reply-part .reply-box .user-profile{
+    border-radius: 20px;
+    width: 100%;
+    padding-left: 30px;
+        display: flex;
+    justify-content: left;
+}
+.reply-part .reply-box .content-reply{
+    border-left: 1px black solid;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.reply-box i{
+    color: #999999;
+}
+.reply-part .reply-level2 .user-profile{
+    margin-left: 20px;
+}
+.reply-part .reply-level2 .content-reply{
+    margin-left: 40px;
+}
+
+.reply-insert{
+    width: 500px;
+    position: absolute;
+    bottom: -147px;
+    background-color: white;
+}
+
+.reply-insert label{
+    padding-left: 10px;
+    width: 80%;
+}
+
+.reply-insert input{
+    width: 100%;
+}
+
+.reply-insert button{
+    width: 50px;
+}
+
+/***************************************
+
+    message_form
+
+****************************************/
+.message-form{
+	width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	margin: 0;
+}
+.message-form table{
+	width: 100%;
+}
+
+/***************************************
+
+    message_sendForm
+
+****************************************/
+.message_sendPage{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+.message_sendPage section{
+	margin: 10px 10px;
+	height: 100%;
+} 
+
+.message_sendPage .send_user{
+	width: 33%;
+	height: 100%;
+	border: 1px solid #888;
+	border-radius: 4px;
+}
+
+.message_sendPage .search_user form{
+	margin: 0;
+	padding: 0;
+}
+.message_sendPage .search_user form table{
+	text-align: center;
+	height: 100%;
+}
+.message_sendPage .message_table{
+	width: 33%;
+}
+.message_sendPage .message_table ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.message_sendPage .message_table ul input{
+	margin: 10px auto 5% auto;
+}
+.message_sendPage .message_table ul li textarea {
+	width: 100%;
+	height: 200px;
+	margin: 10px auto 0 auto;
+}
+.message_sendPage .message_table ul li button{
+	margin: 15px auto;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+}
+.messageForm{
+	width:100%;
+}

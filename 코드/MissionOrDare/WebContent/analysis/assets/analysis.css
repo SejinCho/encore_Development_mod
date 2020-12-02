@@ -1,0 +1,816 @@
+	@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+/*
+font-family: 'Black Han Sans', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap');
+/*
+font-family: 'Noto Sans KR', sans-serif;
+*/
+:root{
+    --black: #212121;
+    --red: rgb(255, 31, 69);
+    --white: #fafafa;
+    --orange: #fd7e14;
+    --default-btn-bgcolor: rgb(33, 33, 33);
+}
+/**************************************
+
+    layout
+
+***************************************/
+html{
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: var(--black);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--red);
+    padding-top: 10px;
+    z-index: 100;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    color: var(--white);
+    font-size: 2rem;
+}
+nav ul li{
+    margin: 10px 20px;
+}
+nav ul li:hover{
+    cursor: pointer;
+}
+
+/**************************************
+
+    analysis_index
+
+***************************************/
+header{
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--red);
+    color: var(--white);
+}
+
+header span{
+    font-size: 6rem;
+    margin: 50px auto;
+}
+header form{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header form i{
+    display: inline;
+    font-size: 2rem;
+}
+
+header form label{
+    display: inline;
+    width: 95%;
+}
+header form label .form-control{
+    text-align: center;
+    padding-right: 50px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+header form label .form-control:hover{
+    cursor: text;
+    box-shadow: 5px 8px 8px #5b3939;
+}
+article{
+    width: 100%;
+    min-height: 600px;
+    color: var(--white);
+}
+article ul{
+    list-style: none;
+    margin: 30px 0 0 0;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+article ul li{
+    min-width: 30%;
+    min-height: 80%;
+}
+article ul li div{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #888;
+    padding: 10px;
+    min-height: 400px;
+}
+article ul li div hr{
+    width: 50px;
+    color: #4b26aa;
+    height: 10px;
+}
+article ul li div label{
+    font-size: 3rem;
+}
+article ul li div span{
+    font-size: 3rem;
+}
+.btn-link{
+    border: 2px solid var(--white);
+    color: var(--white);
+    background: none;
+    width: 50%;
+    margin: 100px auto;
+}
+.btn-link:hover{
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    text-decoration: none;
+}
+footer{
+    color: var(--white);
+    text-align: center;
+    height: 50px;
+}
+/**************************************
+
+    페이지 상단 요술봉 광후니에욤~
+
+***************************************/
+.starStick{
+   cursor: pointer;
+}
+/**************************************
+
+    analysis_subPage_layout
+
+***************************************/
+.sub-page{
+    margin-top: 70px;
+    background: black;
+}
+.sub-page section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    width: 90%;
+    height: 450px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background: var(--white);
+}
+/**************************************
+
+    analysis_subPage_user-rank
+
+***************************************/
+.title{
+   color : black;
+   font-size : 2.7em;
+   text-align: center;
+   margin-top : 10px;
+}
+.most-contents{
+   width: 100%;
+   height: 90%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding : 15px;
+}
+.most-contents ul{
+   width: 55%;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   color: var(--black);
+   display : flex;
+   flex-direction : column;
+}
+.rank-top{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   height : 50%;
+}
+.rank-top div{
+   margin : 0;
+   paddin: 0;
+   border: none;
+   min-height : 100px;
+}
+.rank-top label{
+   font-size : 1.7rem;
+   text-align : center;
+}
+.rank-top img{
+   width : 80px;
+   height : 80px;
+   margin :  0 10px;
+}
+@media screen and (max-width: 1010px){
+   .rank-top img{
+      width : 50px;
+      height : 50px;
+      margin : 1px auto;
+   }
+}
+.rank-top span{
+   font-size : 1.2rem;
+   text-align : center;
+}
+.rank-bottom{
+   display : flex;
+   flex-wrap : wrap;
+   justify-content : center;
+   align-items : flex-end;
+   height : 50%;
+}
+.rank-bottom square{
+   background-color : #efefef;
+   width : 30%;
+   height : 200px;   
+   font-size : 50px;
+   color : #ffc4c4;
+   text-align : center;
+   border-radius : 5%;
+}
+.rank-bottom .top2{
+   height : 150px;
+}
+.rank-bottom .top3{
+   height : 100px;
+}
+.mid {
+   width : 5%;
+   height:90%;
+}
+.rank-list {
+   width:38%; 
+   height:90%; 
+   overflow:auto;
+   background-color : #fffff0;
+   border-radius : 5%;
+}
+.most-contents table{
+   width:100%;
+   padding: 10px;
+   margin: 0;
+   list-style: none;
+   color: var(--black);
+   text-align: center;
+   height: 95%;
+}
+.list-title td{
+   font-size : 15px;
+}
+.rank-contents td{
+   font-size : 10px;
+}
+
+
+
+
+/**************************************
+
+    analysis_most.jsp 나이광훈이다
+
+***************************************/
+.chartAndBoard{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   position: relative;
+}
+/*
+.chartAndBoard .rank-list{
+    position: relative;
+    right: 0%;
+    top: 0%;
+    width: 40%;
+    height: 100%;
+    color: black;
+    overflow: auto;
+}
+*/
+.chartAndBoard .Line_Controls_Chart{
+   width:50%; 
+   display: flex;
+   width: 40%;   
+}
+
+.chartAndBoard div{
+   overflow: hidden;
+   max-height: 445px;
+     margin: auto;
+}
+
+#Line_Controls_Chart{
+   overflow: auto;
+   width: 48%;
+   height: 90%;
+}
+/**************************************
+
+    analysis_most.jsp 나이광훈이다/// 차트그리장 ㅎㅎ
+
+***************************************/
+
+.chart-skills {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 175px;
+}
+.chart-skills *,
+.chart-skills::before {
+  box-sizing: border-box;
+}
+
+.chart-skills::before {
+  position: absolute;
+  content: '';
+  width: inherit;
+  height: inherit;
+  border: 45px solid rgba(211, 211, 211, .3);
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+
+
+.chart-skills li {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 45px solid;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  transform-origin: 50% 0;
+}
+
+.chart-skills li:nth-child(1) {
+  z-index: 4;
+  border-color: green;
+  animation: chartAni1 2s linear 1 forwards;
+}
+
+.chart-skills li:nth-child(2) {
+  z-index: 3;
+  border-color: firebrick;
+  animation: chartAni2 2s linear 1 forwards;
+}
+
+.chart-skills li:nth-child(3) {
+  z-index: 2;
+  border-color: steelblue;
+  animation: chartAni3 2s linear 1 forwards;
+}
+
+.chart-skills li:nth-child(4) {
+  z-index: 1;
+  border-color: orange;
+  animation: chartAni4 2s linear 1 forwards;
+}
+
+
+
+@keyframes chartAni1{
+    0%{transform: rotateZ(0);}
+    26%{transform: rotateZ(40deg)}
+    100%{transform: rotateZ(40deg)}
+}
+@keyframes chartAni2{
+    0%{transform: rotateZ(0);}
+    26%{transform: rotateZ(40deg);}
+    30%{transform: rotateZ(50deg);}
+    100%{transform: rotateZ(50deg);}
+}
+@keyframes chartAni3{
+    0%{transform: rotateZ(0);}
+    30%{transform: rotateZ(50deg)}
+    60%{transform: rotateZ(100deg)}
+    100%{transform: rotateZ(100deg)}
+}
+@keyframes chartAni4{
+    0%{transform: rotateZ(0);}
+    60%{transform: rotateZ(100deg)}
+    100%{transform: rotateZ(180deg)}
+}
+/**************************************
+
+    analysis_most.jsp 나이광훈이다/// 그냥 이것저것 건드리는중인데 이거는 위에 버튼 이벤트처리하는고야 most
+
+***************************************/
+.btn3{position: relative;
+    box-sizing: border-box;}
+.btn3:before, .btn3:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 0;
+    transition:  width 0.8s, height 0.8s;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.btn3:before{top: 0;left: 0; border: 0; border-top-width:2px; border-left-width: 2px; }
+.btn3:after{bottom: 0;right: 0; border:0; border-bottom-width: 2px; border-right-width: 2px;}
+.btn3:hover:before, .btn3:hover:after{
+    border-style: inset;
+    border-color: black;
+    width: 100%;
+    height:100%;
+}
+
+/**************************************
+
+    analysis_most.jsp
+
+***************************************/
+.top-swiper-container{
+   width : 100%
+}
+.top-swiper-container .swiper-wrapper{
+   display : flex;
+   flex-direction: row;   
+}
+.top-swiper-container .swiper-wrapper .swiper-slide{
+   width : 100%;
+}
+.top-swiper-container .swiper-wrapper .swiper-slide iframe{
+   margin : 10px;
+   width : 350px;
+   height : 250px;
+}
+
+/**************************************
+
+    analysis userdata (by Youngroot)
+
+***************************************/
+.userdata-page{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.userdata-page section{
+    background: var(--white);
+}
+
+.user_profile{
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user_profile .onetwothree_ranking img{
+   width : 30px;
+   height : 25px;
+}
+.user_profile label{
+    color: var(--black);
+    margin-bottom: 20px;
+}
+.user_profile img{
+    width: 45%;
+    margin-bottom: 20px;
+}
+.user_profile input{
+    margin: 10px auto;
+    background: var(--black);
+    color: var(--white);
+    width: 50%;
+    height: 50px;
+}
+
+.user-data{
+    width: 72%;
+    height: 100%;
+    padding: 20px;
+    max-height: 100%;
+    overflow: scroll;
+    border-radius: 10px;
+    color: var(--black);
+}
+.user-data::-webkit-scrollbar{
+    display: none;
+}
+
+.user-data .item{
+    width: 100%;
+    height: 33%;
+}
+.user-data .item .chart-part{
+    margin-top: 20px;
+}
+.user-data .item1, .user-data .item2{
+    margin-bottom: 30px;
+}
+.user-data .item3 .chart-part{
+   margin-bottom: 20px;
+}
+
+.modal-bg{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.modal-content{
+    width: 60%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content img{
+    width: 40%;
+}
+.modal-content ul{
+    list-style: none;
+    font-size: 2rem;
+}
+.modal-content ul li{
+    margin-bottom: 3px;
+}
+.modal-content ul .subTitle{
+    color: var(--red);
+    font-size: 2.2rem;
+}
+.modal-content ul .percent{
+    font-size: 3rem;
+}
+/**************************************
+
+    analysis_Olike (by Kwanghoon)
+
+***************************************/
+.sub-page .OlikeRankingSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    width: 90%;
+    height: 450px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background: var(--white);
+}
+.sub-page .OlikeRankingSection .OlikeRanking_medal{
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   height: 10%;
+}
+.sub-page .OlikeRankingSection .OlikeRanking_medal img{
+   width : 30px;
+   height : 25px;
+   margin : 0 181%;
+}
+.sub-page .OlikeRankingBox{
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 90%;
+    height: 90%;
+  
+}
+.OlikeRankingOneTwoThreeBox{
+   background: rgb(217 216 209 / 0.54);
+   width:30%;
+   height: 66%;
+   margin:10px;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv{
+   margin-top: -92px;
+}
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg{
+   border-radius: 100%;
+    box-shadow: 1px 1px 100px beige;
+}
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg:hover{
+   border-radius: 100%;
+    box-shadow: 1px 1px 100px black;
+    cursor:pointer;
+    
+    opacity: 0.75;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.OlikeRankingOneTwoThreeBox .OlikeUserRankingNickname{
+   color:#222;
+   margin-top:12px;
+   font-size: 25px;
+   font-weight: 700;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info{
+   margin-top: 28px;
+    padding-top: 18px;
+    width: 80%;
+    border-top: 1px solid #000000;
+    text-align: center;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl{
+   display: inline-block;
+    width: 45%;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl dt{
+   font-size: 12px;
+    font-family: 'NotoKrM';
+    color: #888;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl dd{
+    margin-top: 6px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0;
+    color: #444;
+    font-weight: 700;
+}
+.sub-page .OlikeSeeMoreRanking{
+   position: relative;
+    top: 94px;
+    margin: 50px auto;
+    width: 90%;
+}
+.sub-page .OlikeSeeMoreRanking:hover{
+   color: #ff1f45;
+   cursor: pointer;
+}
+/**************************************
+
+    analysis_Olikerankingdetail (by Kwanghoon)
+
+***************************************/
+.sub-page .likeSubContentSection{
+   min-height: 720px;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv{
+   width:100%;
+   height: 100%;
+   color: black;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea{
+   margin-bottom: 80px;
+    height: 240px;
+    background: #ded3d342;
+    text-align: center;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea{
+   position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    text-align: left;
+    display: inline-block;
+    text-align: center;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search-tit{
+    margin-top: 55px;
+    font-family: 'NotoKrL';
+    color: #222;
+    font-size: 30px;
+    letter-spacing: -0.04em;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search-tit span{
+    font-family: 'NotoKrB';
+    font-weight: bold;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search{
+   margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    width: 550px;
+    height: 60px;
+    border: 2px solid #333;
+    text-align: left;
+    background: #fff;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search input{
+   width: 100%;
+    padding: 0 60px 0 20px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 16px;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search button{
+   position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: url(../img/sub/ico-search.png) no-repeat;
+}
+.BoardArea .update-date{
+   text-align: right;
+    color: #b9b9b9;
+    padding-bottom: 10px;
+    display: block;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.simple-table{
+   clear: both;
+    text-align: center;
+}
+.ProfileArea{
+	display:flex;
+	width: 100%;
+}
+.ProfileArea .analysis_RankingBoardImage{
+    border-radius: 100%;
+    padding: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+.ProfileArea .userNickname{
+	display: flex;
+	flex-direction: column-reverse;
+}
+.ProfileArea .userTitle{
+	font-size: 10px;
+	text-align: left;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th {
+   display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+.simple-table thead th {
+    font-size: 15px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    text-align: center;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Eval">
+	<select id="getMissionEval" resultType="Dtos.UserMissionsDto">
+		select * from mod_missionstate s left outer join mod_missioninfo i 
+		on s.mission_info_id = i.mission_info_id
+		left outer join mod_missioncategory c
+		on c.mission_category_id = i.mission_category_id
+		where mission_state = 4 
+	</select>
+	<select id="getUserProfile" parameterType="String" resultType="String">
+		select profile_picture from mod_users where user_nickname = #{user_nickname}
+	</select>
+	<update id="passContent" parameterType="String">
+		update mod_missionstate set successed_count = 1+successed_count, mission_evaluation_count=1+mission_evaluation_count
+		where mission_state_id=#{mission_state_id}
+	</update>
+	<update id="failContent" parameterType="String">
+		update mod_missionstate set mission_evaluation_count=1 + mission_evaluation_count
+		where mission_state_id=#{mission_state_id}
+	</update>
+	<update id="statePass" parameterType="String">
+		update mod_missionstate set mission_state = 2 where mission_evaluation_count &gt; 9 and successed_count &gt; 5
+		and mission_state_id=#{mission_state_id}
+	</update>
+	<update id="stateFail" parameterType="String">
+		update mod_missionstate set mission_state = 3 where mission_evaluation_count &gt; 9 and successed_count &lt; 5
+		and mission_state_id=#{mission_state_id}
+	</update>
+	<select id="missionCount" resultType="int">
+		select count(*) from mod_missionstate where mission_state=4
+	</select>
+	<update id="evalNickname" parameterType="Dtos.UserMissionsDto">
+		update mod_missionstate set mission_evaluation_nickname = mission_evaluation_nickname||#{user_nickname}||'/' 
+		where mission_state_id=#{mission_state_id}
+	</update>
+	<!-- 미션 정보 가져오기 -->
+	<select id="getMissionInfo" parameterType="String" resultType="Dtos.MissionStateDto">
+		select * from mod_missionstate where mission_state_id=#{mission_state_id}
+	</select>
+	<!-- 미션 점수 가져오기 -->
+	<select id="getMissionSuccessScore" parameterType="String" resultType="int">
+		select mission_success_score from mod_missioninfo where mission_info_id=#{mission_info_id}
+	</select>
+	<!-- 유저 점수 추가 -->
+	<update id="updateScore" parameterType="java.util.Map">
+		update mod_users set score=score+#{score} where user_nickname=#{user_nickname}
+	</update>
+</mapper>

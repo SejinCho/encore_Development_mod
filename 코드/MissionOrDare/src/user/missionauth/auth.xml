@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  	
+<mapper namespace="auth">
+	<update id="authMission" parameterType="Dtos.MissionStateDto">
+		update mod_missionstate 
+		set 
+		upload_image=#{upload_image, jdbcType=VARCHAR}, upload_video=#{upload_video, jdbcType=VARCHAR}, mission_state=#{mission_state},
+		upload_public_availability=#{upload_public_availability}, mission_upload_contents=#{mission_upload_contents, jdbcType=VARCHAR} 
+		where mission_state_id=#{mission_state_id}
+	</update>
+	<select id="getMissionInfoId" parameterType="String" resultType="String">
+		select mission_info_id from mod_missionstate
+		where mission_state_id=#{mission_state_id}
+	</select>
+	<update id="addStarScore" parameterType="java.util.Map">
+		update mod_missioninfo 
+		set mission_avg_score = mission_avg_score + #{mission_avg_score}
+		where mission_info_id=#{mission_info_id}
+	</update>
+</mapper>

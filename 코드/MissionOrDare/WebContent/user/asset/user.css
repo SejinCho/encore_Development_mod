@@ -1,0 +1,1880 @@
+/*Anton*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/*
+font-family: 'Anton', sans-serif;			광훈
+*/
+/*배민 주아체*/
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/*
+font-family: 'Jua', sans-serif;
+*/
+/*넥슨 Lv.1 고딕 Bold*/
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff')
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    background-size: cover;
+    padding: 10px;
+    font-family: 'Jua', sans-serif;
+}
+
+/**********************************************
+
+      	클릭 이벤트 처리
+
+***********************************************/
+.click-background{
+	background: rgb(75 70 208 / 15%);
+	border-radius:15%;
+	cursor: crosshair;
+}
+
+/**********************************************
+
+      	profile
+
+***********************************************/
+#profile{
+	border: 0px;
+	border-radius: 30px;
+	background-color: #f9dd9a;
+	width: 200px;
+	height: 38px;
+	position: relative;
+	top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#profile .img-circle{
+	position: absolute;
+	left: 0px;
+}
+
+/**********************************************
+
+        header, article, nav
+
+***********************************************/
+header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+}
+header .menu-img{
+   width: 10px;
+   height: 10px;
+   margin-left: 0;
+}
+
+header .header-img{
+    width: 55px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+article{
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.container{
+    font-family: 'NEXON Lv1 Gothic OTF Bold',sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.containerBack{
+   background-color: #0000001c;
+    border-radius: 69px;
+    height: 600px;
+}
+.containerBack .join-title{
+   display: flex;
+}
+.containerBack .title-back{    
+    background-color: #0000001c;
+    border-radius: 100px 100px 0px 0px;
+    display: flex;
+    position: relative;
+}
+nav{
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 10px;
+    margin: 5% 0 0 0;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li{
+    padding: 10px 10px 5px 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav ul img {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+}
+
+
+.nav-home{
+    width: 30px;
+    height: 30px;
+}
+
+/************************
+   joinModifyButton
+*************************/
+.joinModifyButton{
+   background-color: #0000001c;
+    border-radius: 47px;
+}
+
+/**********************************************
+
+        user_index
+
+***********************************************/
+
+.index-logo{
+    width: 45%;
+    height: 15.24%;
+    margin: 30px auto 10px auto;
+}
+.index-title{
+    font-size: 1.5rem;
+    font-family: 'Anton', sans-serif;
+    color: black;
+    font-style: italic;
+    margin: 0 auto;
+
+}
+
+.kakaologin-btn{
+    margin: auto;
+}
+
+
+
+/**********************************************
+
+        user_join
+
+***********************************************/
+
+.join-title{
+    font-size: 2.5rem;
+    margin: 20px auto;
+    margin-bottom: 15px;
+    color: white;
+    align-content: center;
+}
+
+.join-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 1%;
+}
+
+.join-list{
+    width: 100%;
+    list-style: none;
+    margin: 0 0 7.75% 0;
+    display: block;
+    padding: 0;
+}
+.join-list li{
+    margin: 20px auto;
+}
+
+.join-list .th{
+    width: 29%;
+}
+
+.join-list label{
+    width: 69%;
+}
+.text{
+    font-size: x-small;
+    margin-left: 30%;
+}
+.text-danger, .text-primary{
+    display: none;
+}
+
+.btn-default{
+	color: #333;
+    background-color: #ddd;
+    border-color: #999;
+    height: 34px;
+    width: 125px;
+    border-radius: 10px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+}
+.modal-body input{
+    width: 100%;
+    text-align: center;
+    font-size: 1.85rem;
+    border-radius: 30px;
+    border: 2px black solid;
+}
+.btn-category{
+   color: #fff;
+    background-color: #d9534f8a;
+    border-radius: 15px 15px 0px 0px;
+    height: 4rem;
+    border: 0px;
+    width: 99%;
+}
+.btn-memberJoin{
+   color: #fff;
+    background-color: #4fd1d954;
+    border-radius: 0px 0px 15px 15px;
+    height: 4rem;
+    border: 0px;
+    width: 99%;
+}
+/**********************************************
+
+       user_menu bar
+
+***********************************************/
+#menu_list, #menu {
+    padding: 0px;
+    text-align: center;
+    border: solid 0px #0c0c0c;
+    z-index: 4;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+}
+		
+#menu_list {
+    padding: 1%;
+    display: none;
+    position: absolute;   
+    left: 15%;
+    width: 100px;
+    height: 12%;
+    font-size: 13px;
+    justify-content: center;
+    text-align: left;
+    background-color: #33333363;
+    color: white;
+    border-radius: 10%;
+}
+#menu_list span{
+	position: absolute;
+    left: 4%;
+}
+/**********************************************
+
+        user_main
+
+***********************************************/
+ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.data-none{
+	width: 100%;
+	height: 60%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 10% auto 0 auto;
+	background-color: rgba(255,255,255,0.5);
+	margin-top: 15%;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 80%;
+}
+
+.swiper-slide {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.data-exist {
+    font-size: 1.5rem;
+    margin-top: 110px;
+}
+.data-exist .giveup{
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    color: red;
+}
+.data-exist .text-date{
+	margin-top: 15px;
+}
+.data-exist .text-category{
+    margin: 5px 0 0 0;
+}
+.data-exist .text-mission{
+    font-size: larger;
+    margin: 3px 0 0 0;
+}
+.data-exist .text-summary{
+    margin: 5% 0 0 0;
+    font-size: 1.5rem;
+}
+.data-exist .text-status{
+    color: #4b26aa;
+    margin: 20px 0 0 0;
+}
+
+.data-exist .text-date{
+    font-size: x-small;
+}
+
+.data-exist li img{
+    width: 180px;
+    height: 150px;
+}
+
+.data-exist li input{
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: rgba(255,255,255,1.0);
+}
+.data-exist li .form-control{
+    background-color: rgba(255,255,255,1.0);
+    border: none;
+}
+
+.data-exist li .btn-missionAuth{
+    border: none;
+    background-color: #fd7f42;
+    border-radius: 10px;
+    padding: 5% 32%;
+    color: white;
+}
+.slider-btn-align{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -60px;
+	font-size: 1.5rem;
+	color: #888;
+}
+.slider-btn-align i{
+	padding-top: 80px;
+}
+.slider{
+    width: 30px;
+    text-align: center;
+    padding: 0;
+    z-index: 10;
+    margin: 1px auto;
+    position: absolute;
+    
+}
+
+
+.slider img:hover{
+    cursor: pointer;
+}
+
+.list-up-bg{
+	width: 100%;
+	height: 150px;
+	position: absolute;
+    bottom: 54px;
+    left: 0;
+    z-index: 8;
+    overflow: hidden;
+}
+.list-up-item{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #fafafa;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 146px;
+}
+.list-up-back{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100%;
+	z-index:3;
+}
+.list-up-item button{
+	width: 100px;
+}
+.list-up-item .btn-normal{
+    background-color: #4b493d;
+    color: #fafafa;
+}
+
+.list-up-item .btn-challenge{
+    background-color: #4b493d;
+	color: #fafafa;
+}
+
+@media screen and (max-width: 635px) {
+     .slider img{
+        margin-top: 3%;
+    }
+}
+
+.mission-select{
+    width: 100%;
+    height: 20%;
+    padding-bottom: 70px;
+    display: none;
+    z-index: 3;
+    background: none;
+}
+
+.col{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col button{
+    margin: 3px auto;
+    width: 48%;
+    height: 40px;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+.modal-bg{
+    position: fixed;
+    z-index: 30;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-body{
+    background-color: white;
+    width: 96%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+}
+.modal-body .modal-bodyLeft{
+   flex-direction: column;
+    display: flex;
+    width: 100%;
+    position: relative;
+    left: 0%;
+}
+.modal-body .modal-bodyRight{
+   flex-direction: column;
+    display: flex;
+    width: 100%;
+    position: relative;
+    right: 0%;
+}
+
+.modal-body .myCategory{
+    background-color: yellow;
+    width: 150px;
+    height: 80px;
+}
+
+.modal-body .allCategory{
+    background-color: coral;
+    width: 150px;
+    height: 80px;
+}
+
+.giveup-content{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-family: 'Jua', sans-serif;
+}
+@media screen and (max-width: 900px){
+    .giveup-content{
+        width: 80%;
+        height: 50%;
+    }
+    .giveup-content  img{
+        width: 80%;
+    }
+    .giveup-content label{
+        width: 220px;
+        height: 60px;
+    }
+}
+.giveup-content img{
+    width: 50%;
+}
+.giveup-content label{
+    width: 200px;
+    height: 60px;
+    margin: 10px auto
+}
+.giveup-content label input{
+    width: 100%;
+    height: 100%;
+}
+.giveup-content ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**********************************************
+
+        user_missionInfoView
+
+***********************************************/
+.mission-info-view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mission-info-view .goMain{
+	display: block;
+	margin: 15px 0 0 0;
+	width: 50px;
+	height: 30px;
+	position: fixed;
+	right: 30px;
+	top: 10px;
+	color: #e21913d9;
+	font-size: 1rem;
+}
+.mission-info-view .goMain:hover{
+	cursor: pointer;
+}
+
+.mission-info-view label{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+}
+.mission-info-view ul{
+    background-color: rgba(255,255,255,0.4);
+    padding: 3% 3% 3% 8%;
+    list-style-image: url('../images/list_img.png');
+}
+
+.mission-info-view img{
+    width: 40%;
+    height: 30.78%;
+    margin: 10px auto;
+}
+
+.mission-info-view .btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.btn-line button{
+    padding-top: 3%;
+    width: 42.58%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+
+/**********************************************
+
+        user_myMissionAuth
+
+***********************************************/
+.myMission-auth{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.myMission-auth .myMission-authForm{
+	width:100%;
+	height:100%;
+}
+
+.auth_main{
+    width: 100%;
+    height: 88%;
+    padding: 10% 5px 5% 5px;
+}
+.auth_main ol{
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.auth_main li{
+    margin: 3px 0;
+}
+.auth_main ol li input{
+	border: 0px;
+	text-align: center;
+}
+.auth_main ol li i{
+	font-size: 3rem;
+	margin: 0 5px;
+}
+
+.auth_main .text-date{
+    font-size: 1.5rem;
+}
+.auth_main .public-select{
+    width: 40%;
+}
+
+.auth_main img{
+    width: 70%;
+    height:50%;
+    margin: 3px auto;
+    box-shadow: 1px 1px 49px #dbe0c0;
+    border-radius: 51px;
+}
+
+.auth_main .board_content{
+    font-size: 1.4rem;
+    margin: 10% auto 0 auto;
+    text-align: left;
+}
+.auth_main .file_upload{
+    width: 80%;
+    margin: 10px auto 0 auto;
+}
+.auth_main select{
+    font-size: 1.3rem;
+    border: none;
+    height: 30px;
+}
+
+
+.myMission-auth .btn-line{
+    width: 100%;
+    margin: 1px auto;
+}
+.myMission-auth .btn-line button{
+    width: 45%;
+}
+.btn-auth{
+    background-color: coral;
+    color: white;
+}
+
+
+
+.popup-bg{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup-bg:hover{
+    cursor: not-allowed;
+}
+.popup{
+    width: 80%;
+    height: 30%;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup div label{
+    display: block;
+}
+.popup div button{
+    margin-top: 20px;
+    width: 45%;
+    height: 20%;
+}
+
+
+/**********************************************
+
+        user_sucessBoard
+
+***********************************************/
+.successBoard-header{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    width: 87%;
+}
+.boardArticle{
+	position: absolute;
+    top: 8.4%;
+    height: 100%;
+    right: 1%;
+    left: 1%;
+}
+.pid_search{
+    width: 100%;
+    height: 30%;
+    padding: 10px 20px;
+    margin: 0;
+}
+.search-bar{
+    width: 100%;
+    border: 0px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    flex-wrap: wrap;
+}
+
+.search-bar input{
+    width: 80%;
+    border: none;
+    background-color:transparent;
+    margin-top: 3px;
+    font-size: 1.42rem;
+}
+
+.search-bar input:focus{
+    border: none;
+}
+.search-result{
+    font-size: 1.42rem;
+    width: 84%;
+    height: 40%;
+    overflow: scroll;
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 1px #4D4D4D solid;
+    border-radius: 4px;
+    margin-left: 1%;
+}
+
+.search-result::-webkit-scrollbar {
+    display: none;
+}
+
+.search-result .user, .search-result .content{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    border-top: 1px solid #4D4D4D;
+    border-bottom: 1px solid #4D4D4D;
+}
+.search-result div{
+	width: 100%;
+	display: block;
+	border-bottom: 1px solid #888;
+	padding: 5px;
+}
+
+.line-up{
+    width: 100%;
+    height: 5%;
+    margin: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 7px;
+}
+.line-up span{
+    width: 50%;
+    margin: 1px auto;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 200%;
+    border: 1px black solid;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.list{
+    width: 100%;
+    height: 88%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1% 1% 60px 1%;
+    overflow: scroll;
+    margin-bottom: 20%;
+}
+
+list ::-webkit-scrollbar {
+    display: none;
+}
+.list img{
+    width: 33%;
+    height: 17%;
+    margin: 0;
+}
+
+/**********************************************
+
+        user_eval 난다고래&
+
+***********************************************/
+.eval{
+   width: 100%;
+   height: 100%;
+}
+.eval-none{
+	margin-top:0;
+	text-align: center;
+}
+
+.eval .gilpung{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   font-size: 1.7rem;
+   margin: 10px auto;
+   background-color: rgba(255,255,255,0.5);
+   position: relative;
+   bottom: 5rem;
+}
+.eval .gilpung .btn-line{
+   width: 300px;
+   margin-top: 25px;
+}
+
+.eval div{
+   margin: 10px auto;
+}
+
+.successbtn{
+	border:0px;
+	background-color: #fd7f42;
+	width:44%;
+	border-radius: 10px;
+	height: 40px;
+	color:white;
+}
+.deletebtn{
+	border:0px;
+	background-color: #4b493d;
+	width:44%;
+	height: 40px;
+	border-radius: 10px;
+	color:white;
+}
+
+.item{
+   display: flex;
+   justify-content: space-around;
+   margin: 0px auto;
+   font-size: 2rem;
+   position: relative;
+   top: 4rem
+}
+
+.item img{
+   width: 200px;
+   height: 170px;
+   position: relative;
+   bottom: 4rem;
+   margin: auto 20px;
+}
+
+.item1 {
+   position: relative;
+      top: 0rem;
+      font-size: 1.5rem;
+}
+
+.item2 {
+   position: relative;
+      top: -2.5rem;
+}
+
+.eval-btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+	position: relative;
+    top: -80px;
+}
+.eval-btn-line button{
+    padding-top: 3%;
+    width: 42.58%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+/**********************************************
+
+        user_my
+
+***********************************************/
+.usermyArticle{
+	margin-top: 80px;
+	overflow: hidden;
+}
+.userinfo-part{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255,255,255,0.4);
+	padding-bottom: 20px;
+}
+.userinfo-part div{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	margin: 0 auto 20px auto;
+	background: #ffff00c4;
+	width: 200px;
+	height: 42px;
+	border-radius: 30px;
+	transform: translate(-50%, -50%);
+	position: relative;
+	top: 10px;
+	left: 100px;
+}
+.userinfo-part div span{
+	width: 150px;
+	text-align: center;
+	font-size: 1.7rem;
+}
+.userinfo-part .message-img{
+	display: inline;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 130px;
+	top: 25px;
+}
+.userinfo-part label{
+	font-size: 1.5rem;
+}
+
+
+
+.writeMessage{
+	position: relative;
+    width: 35px;
+    height: 35px;
+    z-index: 4;
+}
+.gaein{
+    background-color: #eaeff8;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+.gaein span{
+    color: #77775a;
+    font-size: 72%;
+    font-style: italic;
+
+}
+
+.imymemine .good{
+    text-align: left;
+    height: 105px;
+    display: flex;
+    flex-flow: row;
+}
+.imymemine .good .missionimage{
+    height: 90px;
+    width: 95px;
+    border-radius: 20%;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+div hr{
+    margin-top: 7%;
+    margin-bottom: 2%;
+    border-top: 1px solid black;
+    display: block;
+}
+.gay{
+	border-top: 1px solid #0000001f;
+}
+.gay span{
+    font-size: 60%;
+}
+.good span{
+    color: black;
+    font-size: 1rem;
+    display: block;
+    align-self: center;
+}
+.good span a{
+    display: block;
+    font-size: 2rem;
+}
+.good span b{
+    display: block;
+    font-size: 2rem;
+    color: red;
+}
+
+.myMissionpackage{
+    overflow: scroll;
+    width: 100%;
+    height: 88%;
+    padding: 10px;
+    text-align: left;
+}
+
+.imymemine .white-box1{
+    width: 100%;
+    height: 80%;
+    margin: 10px auto;
+    background-color: rgba(255,255,255,0.5);
+    padding: 0;
+}
+div .write-control{
+    width: 100%;
+    height:25%;
+    font-size: 72%;
+}
+.aho{
+    height: 100%;
+    margin: 5%;
+}
+.missionNav{
+    width: 100%;
+}
+.sisisi{
+	display: flex;
+	flex-wrap: wrap;
+	width:55%;
+	align-items: center;
+}
+.sisisi label{
+	display:block;
+}
+.sisisi span{
+	font-size: 2rem;
+}
+
+
+.imymemine{
+    height: 60%;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    background: rgba(255,255,255,0.4);
+    padding: 10px 0 0 0;
+}
+
+.myMissionList{
+	height: 90%;
+	overflow: auto;
+	font-size: 1.5rem;
+}
+.myMissionList-items{
+	border-top: 1px solid #0000001f;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+}
+.myMissionList-items img{
+	width: 80px;
+	height: 80px;
+	border-radius: 4px;
+	margin-right: 10px;
+}
+
+.myMissionList-items ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 61%;
+	max-width: 61%;
+}
+.myMissionList-items ul .mission_title{
+	margin: 10px auto;
+}
+.myMissionList-items ul .text-default{
+	color: black;
+}
+.myMissionList-items ul .text-success{
+	color: #4b26aa;
+}
+.myMissionList-items ul .text-danger{
+	color: #fd7978;
+}
+.myMissionList-items ul .text-primary{
+	color: #63b5e5;
+	display: block;
+}
+.myMissionList-items ul .mission_startDate{
+	font-size: 1rem;
+}
+/**********************************************
+
+        user_myInfoModify 데헷~^^
+
+***********************************************/
+.modify{
+	width:49%;
+}
+.modifyProfile{
+	width:100%;
+	height:40%;
+}
+.modifyProfile .img-circle{
+	width:16%;
+	height:90%;
+}
+.btn-modify{
+   color: #fff;
+    background-color: #4fd9714a;
+    border-radius: 0px 0px 0px 15px;
+    height: 4rem;
+    border: 0px;
+    width: 49%;
+}
+.btn-cancle{
+   color: #fff;
+    background-color: #4fd1d954;
+    border-radius: 0px 0px 15px 0px;
+    height: 4rem;
+    border: 0px;
+    width: 49%;
+}
+.modal-footer button{
+	border-radius: 10px;
+}
+/**********************************************
+
+   user_messageForm
+
+***********************************************/
+.messageNav{
+	margin: 80px auto 10px auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.7rem;
+	padding: 0 10px;
+}
+
+.messageNav span{
+	padding: 0 5px;
+}
+.messageNav img{
+	width: 40px;
+	height: 30px;
+}
+.messageInfo{
+	padding: 10px 0;
+	height:70%;
+}
+
+
+
+/**********************************************
+
+        user_getMessage 난다고래&
+
+***********************************************/
+.getMessageContent{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+.getMessageList{    
+    background-color: #f7f9f9;
+    border-radius: 10px;
+    border: 1px #f7f9f9 solid;
+    font-size: 1.5rem;
+    top: 0.17%;
+    left: 0rem;
+    position: relative;
+    margin: 20px auto;
+}
+
+.getMessageList img{
+	width: 2rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 0rem;
+}
+.getMessageList .Nick{
+	height: 1.8rem;
+    line-height: 2.5;
+    background-color: #eef327;
+    border-radius: 20px;
+    border: 1px #ffffff solid;
+    width: 10rem;
+    margin: 12px auto;
+    position: absolute;
+    top: -2rem;
+    left: 10rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.getMessageDate{
+    position: absolute;
+    left: 24rem;
+    font-size: 1.2rem;
+}
+
+/**********************************************
+
+        user_sentMessage 난다고래&
+
+***********************************************/
+.sentM .container{
+	height: 25rem
+}
+.sentMessageContent img{
+	width: 2rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 0rem;
+}
+.sentMessageContent{
+	position: absolute;
+    top: 30%;
+    height: 60%;
+    width: 88%;
+    overflow: scroll;
+    
+}
+.sentMessageContent .Nick{
+	height: 1.8rem;
+    line-height: 2.5;
+    background-color: #eef327;
+    border-radius: 20px;
+    border: 1px #ffffff solid;
+    width: 10rem;
+    margin: 12px auto;
+    position: absolute;
+    top: -2rem;
+    left: 10rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.sentMessageList{    
+    background-color: #f7f9f9;
+    border-radius: 10px;
+    border: 1px #f7f9f9 solid;
+    font-size: 1.5rem;
+    left: 0rem;
+    width: 31rem;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sentMessageDate{
+    position: absolute;
+    left: 24rem;
+    font-size: 1.2rem;
+}
+
+/**********************************************
+
+        user_profileModify 데헷~^^
+
+***********************************************/
+.center-align{
+	text-align: center;
+}
+
+.content-image{
+	width: 100%;
+	height: 75%;
+	
+	text-align: center;
+}
+.content-backcolor{
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 10%;
+	position: relative;
+	top:5rem;
+}
+.content-defaultimage{
+	width: 80%;
+	height: 78%;
+	border-radius: 100%;
+	padding: 15px;
+}
+.profile-modifybtn{
+	width:100%;
+	text-align: center;
+}
+.profile-modifybtn .profilemodifybtn{
+	border: 6px solid #b48181;
+    border-radius: 10px;
+    background-color: #b48181;
+}
+/**********************************************
+
+        user_sendMessage 데헷~^^
+
+***********************************************/
+.sendMsgForm{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.sendTop{
+	width:100%;
+	height:90%;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	margin: 0px;
+	padding: 0px 0px 9px 0px;
+}
+.sendTop span{
+	margin: auto 5px;
+	font-size: 1.3rem;
+}
+
+.sendTop .messagetextarea{
+	width:100%;
+	height:70%;
+	background-color: rgba(255,255,255,0.5);
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.sendbottom{
+	width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.sendbottom button{
+	width: 100px;
+	height: 36px;
+}
+/**********************************************
+
+        user_content
+
+***********************************************/
+.likecount{
+	margin: 0 0 10px 0;
+}
+.usercontent{
+	width: 100%;
+	height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.usercontent ol{
+	list-style: none;
+	padding: 0px;
+	margin: 10px 0 0 0;
+}
+.usercontent .mission-category div{
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: inline;
+	font-size: 1.3rem;
+}
+.mission-category div img{
+	width: 20px;
+	height: 20px;
+	margin-bottom: 5px;
+	padding:0;
+}
+.mission-category div button{
+	color: black;
+	padding: 0;
+}
+.usercontent .BoysandGirls{
+	width:30px;
+	height:30px;
+	border-radius: 100%;
+}
+.usercontent li{
+	margin: 3px auto;
+	width: 100%;
+}
+.usercontent li .content-img{
+	width: 200px;
+	height: 230px;
+}
+
+.reply-part{
+	width: 100%;
+	height: 22%;
+	margin: 0 auto 120px auto;
+}
+.reply-part .likecount img{
+	width: 30px;
+	height: 20px;
+}
+.reply-part .reply-contents{
+	background: rgba(255,255,255,0.5);
+	padding: 3px 6px;
+	width: 100%;
+	height:100%;
+	overflow: auto;
+}
+.reply-part .reply-contents .reply{
+	padding: 10px 0 10px 5px;
+	
+}
+.reply-part .reply-text{
+	font-family: 'Anton', sans-serif;
+	font-size: 1.3rem
+}
+.reply-part  .re-replyUser{
+	font-size: 1.2rem;
+	color: #888;
+}
+.reply-part .reply .modal-bg{
+	z-index: 10;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+.reply-part .modal-bg ul{
+	list-style: none;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	width: 60%;
+	height: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+.reply-part .modal-bg ul li{
+	margin: 10px auto;
+	font-size: 2rem;
+	width: 80%;
+	padding: 10px;
+}
+.modal-bg ul .user-nick{
+	border-bottom: 1px solid #888;
+	font-size: smaller;
+	color: #A4B6E0;
+	padding: 15px;
+	
+	
+}
+.reply-part .modal-bg ul .text-danger{
+	display: block;
+}
+
+.replyho{
+	width:100%;
+	height:100%;
+	border:0;
+	font-size: 70%;
+	font-style: italic;
+	background-color: #d0c3c3;
+	text-align: left;
+	border-radius: 39%;
+}
+.buttonlegend{
+	text-align: right;
+	position: relative;
+	bottom: 10;
+}
+.replybtn{
+	font-size: 100%;
+	font-style: oblique;
+	background-color: #8d8080;
+	padding:0;
+	margin:0;
+}
+.userreplyho{
+	width: 91%;
+    height: 5%;
+    position: fixed;
+    z-index: 2;
+    bottom: 60px;
+    left: 0;
+    background-color: #f8f8f8;
+    text-align: left;
+}
+.userreplyhotext{
+	width:100%;
+	height:100%;
+	font-size: x-small;
+	font-style: italic;
+	border: 0px;
+}
+.userbtnbtn{
+	border:0px;
+	height:100%;
+	position: absolute;
+	left:100%;
+	bottom: 0px;
+	font-size: x-small;
+}
+/**********************************************
+
+        user_report 데헷~&^_^
+
+***********************************************/
+.reportArticle{
+	width:100%;
+	height:100%;
+	margin-top: 100px;
+}
+.reportSection{
+	width: 100%;
+    height: 100%;
+    padding: 0px 10px 30px 10px;
+    text-align: center;
+}
+.reportProfile{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+.img-circle{
+	width:30px;
+	height:30px;
+}
+.imageProfile{
+	width:40px;
+	height: 40px;
+}
+.contentProfile{
+	background-color: #eef327;
+    border-radius: 20px;
+    width: 260px;
+    text-align: left;
+    display:inline-table;
+    margin-bottom: 15px;
+    
+}
+.reportWrite{
+	margin-top: 20px;
+	width:301px;
+	height:145px;
+	border: 8px solid #c3c3c3;
+	border-radius: 10%;
+	background-color: azure;
+}
+
+textarea:focus{
+	outline: none;
+}
+/**********************************************
+
+        user_myMissionEvaling.jsp 데헷~&^_^
+
+***********************************************/
+.missionAuthingImage{
+	width:100%;
+	height: 65%;
+}
+.missionAuthingImage div{
+	height: 100%;
+}
+
+.arae{
+	height: 36.6%;
+    background-image: linear-gradient(0deg, #9a8585, transparent);
+}
+.wrap{
+	display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 30%;
+}
+.evalscore{
+	width: 100%;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.bestarae{
+	width:100%;
+	height: 40%;
+	display: grid;
+}
+.araebutton{
+	width:100%;
+	height:100%;
+}
+/**********************************************
+
+        user_withdrawal.jsp 데헷~&^_^
+
+***********************************************/
+.withdrawal{
+	height: 74%;
+    width: 100%;
+    margin-top: 29%;
+}
+.withdrawaltitle{
+	text-align: center;
+    font-size: 39px;
+    padding: 10%;
+    font-style: italic;
+}
+.withdrawalpasswd{
+	text-align: center;
+}
+.withdrawalWhiteBox1{
+    height: 40%;
+    margin: auto 40px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 30%;
+}
+
+/**********************************************
+
+       user_myMissionAuth.jsp 별점평가 데헷
+
+***********************************************/
+.starR{
+  background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
+  background-size: auto 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.starR.on{background-position:0 0;}
+
+.divdiv{
+	text-align: center;
+	margin: 40px auto 0 auto;
+}
+
+
+/**********************************************
+
+        user_myMissionCheck
+***********************************************/
+
+.mission-info-view{
+    margin-top: 30px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style : none;
+}
+.mission_state{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items :center;
+    list-style : none;
+}
+.mission-info-view label{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.mission_category{
+   font-size: 15px;
+   list-style : none;
+}
+.mission_title{
+ 	font-size: 25px;
+ 	list-style : none;
+}
+.mission_date{
+   	font-size: 10px;
+   	list-style : none;
+}
+.mission_image{
+	list-style : none;
+}
+.mission-info-view img{
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    border-radius: 15%;
+    list-style : none;
+}
+.mission_content{
+    background-color: rgba(255,255,255,0.4);
+    margin: 10%;
+    padding: 3% 3% 3% 8%;
+	list-style-image: url('../images/list_img.png');
+	width: 85%;
+}
+.mission_title img{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px ;
+    border-radius: 25%;
+}
+
+.user_myMissionCheck{
+	list-style : none;
+}
+
+.btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.btn-line button{
+    padding-top: 3%;
+    width: 42.58%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+
+
+
+

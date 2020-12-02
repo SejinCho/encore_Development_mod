@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Mission">
+	<select id="getBoardCount" resultType="int">
+		select count(*) from mod_successboard	
+	</select>
+	<select id="getSearchWriterCount" resultType="int">
+		select count(*) from mod_successboard where user_nickname like '%'||#{searchContent}||'%'
+	</select>
+	<select id="getSearchCategoryCount" resultType="int">
+		select count(*) from mod_successboard s left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where large_category like '%'||#{searchContent}||'%'
+		or small_category like '%'||#{searchContent}||'%'
+	</select>
+	<select id="getSearchTitleCount" resultType="int">
+		select count(*) from mod_successboard s left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id where mission_title like '%'||#{searchContent}||'%'
+	</select>
+	
+	<select id="getBoardArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo i
+		on s.mission_info_id=i.mission_info_id
+		left outer join mod_missioncategory c
+		on i.mission_category_id= c.mission_category_id
+		order by s.board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getBoardArticle" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select * from mod_successboard s 
+		left outer join mod_missioninfo i
+		on s.mission_info_id=i.mission_info_id
+		left outer join mod_missioncategory c
+		on i.mission_category_id= c.mission_category_id
+		where s.success_board_id=#{joinMissionInfoSuccessBoardDto.success_board_id}
+		order by s.board_register_date desc
+	</select>
+	
+	<select id="getSearchWriterArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where user_nickname like '%'||#{searchContent}||'%'
+		order by board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchCategoryArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where large_category like '%'||#{searchContent}||'%'
+		or small_category like '%'||#{searchContent}||'%' 
+		order by s.board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchTitleArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where mission_title like '%'||#{searchContent}||'%'
+		order by s.board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getBoardInfo" parameterType="String" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where s.success_board_id = #{success_board_id}
+		order by s.board_register_date desc
+	</select>
+	
+	<select id="getReply" parameterType="String" resultType="Dtos.ReplyDto">
+		select * from mod_reply where success_board_id = #{success_board_id} order by reference , reply_date 
+	</select>
+	
+	<delete id="deleteReply" parameterType="String">
+		delete from mod_reply where reply_id=#{reply_id}
+	</delete>
+	<delete id="deleteReplies" parameterType="java.util.Map">
+		delete from mod_reply where reference=#{reference} and success_board_id=#{success_board_id}
+	</delete>
+	<select id="selectUpload" parameterType="String" resultType="Dtos.MissionStateSuccessBoardDto">
+		select * from mod_successboard s left outer join mod_missionstate m
+		on s.mission_state_id = m.mission_state_id
+		where s.success_board_id = #{success_board_id}
+	</select>
+</mapper>
